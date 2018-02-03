@@ -5,6 +5,10 @@ Given: Two positive integers aa and bb, each less than 1000.
 
 Return: The integer corresponding to the square of the hypotenuse of the right triangle whose legs have lengths aa and bb.
 
+Sample Dataset
+3 5
+Sample Output
+34
 """
 
 from math import sqrt
