@@ -11,8 +11,6 @@ Sample Output
 34
 """
 
-from math import sqrt
-
 probnum = 'ini2'
 filename = '../data/rosalind_' + probnum + '.txt'
 
