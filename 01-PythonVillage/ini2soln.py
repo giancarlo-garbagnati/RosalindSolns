@@ -11,17 +11,18 @@ Sample Output
 34
 """
 
+# Building file name
 probnum = 'ini2'
 filename = '../data/rosalind_' + probnum + '.txt'
 
+# Parse out the variables from the file
 data_input = open(filename, 'r')
 data_input = data_input.read().replace('\n','')
-
 nums = data_input.split()
 
+# Calculate squared hypothenuse
 a = int(nums[0])
 b = int(nums[1])
-
 c_sq = a**2 + b**2
 
 print(a,b)
