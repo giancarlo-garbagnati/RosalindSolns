@@ -33,10 +33,6 @@ filename = '../data/rosalind_' + probnum + '.txt'
 
 # Parse out the variables from the file
 data_input = open(filename, 'r')
-#fasta_file = []
-#for line in data_input:
-    #line = line.replace('\n','')
-
 fasta_file = [x.replace('\n','') for x in data_input.readlines()]
 
 # Function to determine GC of a DNA seq
