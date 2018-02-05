@@ -1,23 +1,26 @@
 """
-Combing Through the Haystack
+The Billion-Year War
 Problem
-Given two strings ss and tt, tt is a substring of ss if tt is contained as a contiguous collection of symbols in ss (as a result, tt must be no longer than ss).
 
-The position of a symbol in a string is the total number of symbols found to its left, including itself (e.g., the positions of all occurrences of 'U' in "AUGCUUCAGAAAGGUCUUACG" are 2, 5, 6, 15, 17, and 18). The symbol at position ii of ss is denoted by s[i]s[i].
+Figure 2. Palindromic recognition site
+A DNA string is a reverse palindrome if it is equal to its reverse complement. For instance, GCATGC is a reverse palindrome because its reverse complement is GCATGC. See Figure 2.
 
-A substring of ss can be represented as s[j:k]s[j:k], where jj and kk represent the starting and ending positions of the substring in ss; for example, if ss = "AUGCUUCAGAAAGGUCUUACG", then s[2:5]s[2:5] = "UGCU".
+Given: A DNA string of length at most 1 kbp in FASTA format.
 
-The location of a substring s[j:k]s[j:k] is its beginning position jj; note that tt will have multiple locations in ss if it occurs more than once as a substring of ss (see the Sample below).
-
-Given: Two DNA strings ss and tt (each of length at most 1 kbp).
-
-Return: All locations of tt as a substring of ss.
+Return: The position and length of every reverse palindrome in the string having length between 4 and 12. You may return these pairs in any order.
 
 Sample Dataset
-GATATATGCATATACTT
-ATAT
+>Rosalind_24
+TCAATGCATGCGGGTCTATATGCAT
 Sample Output
-2 4 10
+4 6
+5 4
+6 6
+7 4
+17 4
+18 4
+20 6
+21 4
 """
 
 # Building file name
@@ -28,27 +31,43 @@ filename = '../data/rosalind_' + probnum + '.txt'
 # Parse out the variables from the file
 data_input = open(filename, 'r')
 fasta_file = [x.replace('\n','') for x in data_input.readlines()]
-seq = fasta_file[0]
-query = fasta_file[1]
+seq = ''
+for line in fasta_file:
+    if line[0] == '>':
+        label = line[1:]
+    else:
+        seq += line
+min_pal = 4
+max_pal = 12
 
-# Iterate through the sequence and find all locations of the 
-i = 0
-query_list = []
-while i >= 0:
-    # We'll search from the right to left, and shorten the sequence as we find more matches
-    i = seq.rfind(query)
-
-    if i < 0:
-        break
+# Function to determine if a string is a DNA palindromic sequence, only takes even length'd sequences
+def is_dna_palindrome(dna_s):
+    l = len(dna_s)
+    hl = int(l/2)
+    if l%2==1: # odd length sequence = False
+        return False
     
-    seq = seq[:i+len(query)-1]
-    query_list.append(i+1)
+    return dna_s[:hl] == revc(dna_s[hl:])
 
-# Build output string
-query_list.sort()
-output = ''
-for match in query_list:
-    output = output + str(match) + ' '
-output = output[:-1]
+# Function that returns a DNA sequence's reverse compliment
+def revc(dna_s):
+    dna_s = dna_s.upper().replace('A','X').replace('T','A').replace('X','T')
+    dna_s = dna_s.replace('G','X').replace('C','G').replace('X','C')
+    return dna_s[::-1]
 
-print(output)
+# Function to return a list of tuples (location, length) and of all DNA palindromes of a given length
+def find_all_dna_palindromes(dna_s, pal_len):
+    pal_list = []
+    for i in range(pal_len,len(dna_s)+1):
+        current = dna_s[i-pal_len:i]
+        if is_dna_palindrome(current):
+            pal_list.append((i-pal_len+1, pal_len))
+    return pal_list
+
+# Go through all 4-12 and find all palindromes of each length, and combine them in one list
+all_pals = []
+for i in range(min_pal,max_pal+1):
+    all_pals = all_pals + find_all_dna_palindromes(seq, i)
+
+for pair in all_pals:
+    print(pair[0], pair[1])
