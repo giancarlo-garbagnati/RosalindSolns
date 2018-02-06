@@ -20,14 +20,21 @@ Sample Output
 # Building file name
 probnum = 'fib'
 filename = '../data/rosalind_' + probnum + '.txt'
-filename = '../data/rosalind_' + probnum + '_sample.txt'
+#filename = '../data/rosalind_' + probnum + '_sample.txt'
 
 # Parse out the variables from the file
 data_input = open(filename, 'r')
 in_file = data_input.readline().replace('\n','').split()
 
-n = in_file[0]
-k = in_file[1]
+n = int(in_file[0])
+k = int(in_file[1])
+initial = 1 # start with 1 pair of rabbits
 
-print(n)
-print(k)
+def fib_gen(n, k, initial):
+    if n <= 2:
+        return initial
+    else:
+        # return mating pairs plus immature pairs
+        return fib_gen(n-1, k, initial) + (k * fib_gen(n-2, k, initial))
+
+print(fib_gen(n,k,initial))
