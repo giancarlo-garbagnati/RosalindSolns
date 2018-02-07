@@ -25,7 +25,26 @@ m = int(in_file[1]) # each rabbit pair lives on for m-years
 k = 1 # each pair produces 1 pair of immature rabbits
 initial = 1 # start with 1 pair of immature rabbits
 
-# Works but is too slow
+fib_gen = []
+i = 0
+while i < n:
+    if i < 2:
+        fib_gen.append(1)
+    elif i < m:
+        fib_gen.append((fib_gen[i-2]*k) + fib_gen[i-1])
+    elif i <= m+1:
+        fib_gen.append((fib_gen[i-2]*k) + fib_gen[i-1] - 1)
+    else:
+        fib_gen.append((fib_gen[i-2]*k) + fib_gen[i-1] - fib_gen[i-m-1])
+    i += 1
+
+print(fib_gen)
+print(fib_gen[-1])
+
+'''
+n = 10
+m = 3
+# Works but is way too slow
 pop = [] # population at first month
 newborn = initial
 matings = 0
@@ -47,9 +66,12 @@ for i in range(1,n+1):
     #print('After addition of newborn from previous season', pop)
 
     newborn = matings
+    print('Pop', pop)
     #print('Total pop', len(pop))
     #print()
 
 
 print('Final population ages:', pop)
 print('Final population:', len(pop))
+'''
+
