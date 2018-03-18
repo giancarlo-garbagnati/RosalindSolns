@@ -1,4 +1,5 @@
 """
+http://rosalind.info/problems/sign/
 Synteny Blocks Have Orientations
 Problem
 A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negative sign (for the sake of simplicity, we omit the positive sign). For example, π=(5,−3,−2,1,4) is a signed permutation of length 5.

@@ -1,4 +1,5 @@
 """
+http://rosalind.info/problems/cons/
 The Billion-Year War
 Problem
 

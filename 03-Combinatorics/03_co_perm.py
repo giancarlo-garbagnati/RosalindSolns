@@ -1,4 +1,5 @@
 """
+http://rosalind.info/problems/perm/
 Rearrangements Power Large-Scale Genomic Changes
 Problem
 A permutation of length n is an ordering of the positive integers {1,2,…,n}. For example, π=(5,3,2,1,4) is a permutation of length 5.

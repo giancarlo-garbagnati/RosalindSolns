@@ -1,4 +1,5 @@
 """
+http://rosalind.info/problems/ini6/
 Intro to Python dictionary
 Problem
 Given: A string ss of length at most 10000 letters.

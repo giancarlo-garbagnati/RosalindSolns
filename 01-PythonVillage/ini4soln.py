@@ -1,4 +1,5 @@
 """
+http://rosalind.info/problems/ini4/
 Conditions and Loops
 Problem
 Given: Two positive integers aa and bb (a<b<10000a<b<10000).

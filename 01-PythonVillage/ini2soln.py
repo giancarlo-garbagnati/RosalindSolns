@@ -1,4 +1,5 @@
 """
+http://rosalind.info/problems/ini2/
 Variables and Some Arithmetic
 Problem
 Given: Two positive integers aa and bb, each less than 1000.

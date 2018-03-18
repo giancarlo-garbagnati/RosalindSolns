@@ -1,4 +1,5 @@
 """
+http://rosalind.info/problems/rna/
 The Second Nucleic Acid
 Problem
 An RNA string is a string formed from the alphabet containing 'A', 'C', 'G', and 'U'.

@@ -1,4 +1,5 @@
 """
+http://rosalind.info/problems/subs/
 Combing Through the Haystack
 Problem
 Given two strings ss and tt, tt is a substring of ss if tt is contained as a contiguous collection of symbols in ss (as a result, tt must be no longer than ss).

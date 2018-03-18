@@ -1,4 +1,5 @@
 """
+http://rosalind.info/problems/ini3/
 Strings and lists
 Problem
 Given: A string ss of length at most 200 letters and four integers aa, bb, cc and dd.

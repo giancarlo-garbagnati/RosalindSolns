@@ -1,4 +1,5 @@
 """
+http://rosalind.info/problems/fib/
 Wascally Wabbits
 Problem
 A sequence is an ordered collection of objects (usually numbers), which are allowed to repeat. Sequences can be finite or infinite. Two examples are the finite sequence (π,−2‾√,0,π)(π,−2,0,π) and the infinite sequence of odd numbers (1,3,5,7,9,…)(1,3,5,7,9,…). We use the notation anan to represent the nn-th term of a sequence.
