@@ -62,5 +62,3 @@ for i in range(1, max_i+1):
     print(degree_dict[i], end=' ')
 print()
 
-
-
