@@ -62,3 +62,6 @@ for m_query in m_queries:
     print(index, end = ' ')
 print()
 
+# Simply copy pasting the answer into Rosalind's text box didn't seem to work for me. Instead, 
+#  moving this script output to a file 'python 01_dc_bins.py > output.txt' and then uploading
+#  through the file upload worked.
