@@ -62,3 +62,6 @@ for i in range(1, max_i+1):
     print(degree_dict[i], end=' ')
 print()
 
+# Simply copy pasting the answer into Rosalind's text box didn't seem to work for me. Instead, 
+#  moving this script output to a file 'python 01_ah_deg.py > output.txt' and then uploading
+#  through the file upload worked.
