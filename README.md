@@ -1,5 +1,5 @@
 # RosalindSolns
-Solutions for [Rosalind](http://rosalind.info/) problems  
+My solutions for [Rosalind](http://rosalind.info/) problems  
 
 [Profile](http://rosalind.info/users/ilprofeta/)
 
